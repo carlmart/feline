@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+   <img src="<%= @cat.img %>" height="100" width="100" /><br>
+   <b>Name:</b>
+   <%= @cat.name %>
+
+   <b>Img:</b>
+   <%= @cat.img %>
+</p>
+
+
+<%= link_to 'Edit', edit_cat_path(@cat) %> |
+<%= link_to 'Back', cats_path %>

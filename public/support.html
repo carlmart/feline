@@ -1,0 +1,37 @@
+<html><title>Ruby on Rails </title>
+<head>
+<b> Database for displaying cats:  </b><br>
+<b> Developed using "devise"  </b><br>
+<br>
+<a href="http://media.railscasts.com/videos/209_introducing_devise.mov">
+http://media.railscasts.com/videos/209_introducing_devise.mov</a><br>
+cd /www  <br>
+&nbsp &nbsp <b><i>rails new feline </i></b><br>
+cd feline <br>
+&nbsp &nbsp <b><i>rake db:create</b></i> <br>
+&nbsp &nbsp <b><i>sudo bundle install</b></i> <br>
+&nbsp &nbsp <b><i>rails generate controller home index </b></i> <br>
+edit config/routes.rb  ---->added <b><i> resources :cats </b></i> <br>
+&nbsp &nbsp <b><i>rails generate scaffold Cat name:string img:string </b></i> <br>
+&nbsp &nbsp <b><i>rake db:migrate</b></i> <br>
+copied cat images to public/images/ - ex cat1.jpeg <br>
+<br>Now to display an image of cat : <br>
+Edited: apps/views/cats/show.html.erb <br>
+<br>
+<b><i>
+
+&nbsp &nbsp  &lt;img src="<%= @cat.img %>" height="100" width="100" >  <br>
+&nbsp &nbsp  &lt;%= @cat.name %>   <br>
+&nbsp &nbsp  &lt;%= @cat.img %>    <br>
+</b></i>
+<br>
+Edited: apps/views/cats/index.html.erb <br>
+<br>
+<b><i>
+&nbsp &nbsp  &lt;% @cats.reverse_each do |cat| %>   <br>
+&nbsp &nbsp  &lt;img src="<%= cat.img %>" height="50" width="50" />     <br>
+&nbsp &nbsp  &lt;%= cat.name %>      <br>
+&nbsp &nbsp  &lt;%= cat.img %>      <br>
+
+</b></i>
+
