@@ -1,6 +1,7 @@
 class CatsController < ApplicationController
- before_filter :authenticate_user!, :except => [:show, :index]
-  # GET /cats
+# before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:index]
+# GET /cats
   # GET /cats.xml
   def index
     @cats = Cat.all
